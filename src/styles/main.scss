@@ -1,3 +1,20 @@
+@font-face {
+    font-family: 'AkzidenzGroteskPro';
+    src: url('../fonts/font/AkzidenzGroteskPro-Regular.woff') format('woff2');
+    font-weight: 400;
+    /* Нормальный вес */
+    font-style: normal;
+    /* Обычный стиль */
+}
+@font-face {
+    font-family: 'RoadRadio';
+    src: url('../fonts/RoadRadio/RoadRadio.woff2') format('woff2');
+    font-weight: 400;
+    /* Нормальный вес */
+    font-style: normal;
+    /* Обычный стиль */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -28,9 +45,9 @@ $footer-background: #222225;
 $footer-color: #fff;
 $primary-text-color: #797986;
 $footer-padding: 20px;
-$font-family-akzidenz: 'Roboto', sans-serif;
+$font-family-akzidenz: 'AkzidenzGroteskPro', sans-serif;
 $font-family-golos: 'Golos', sans-serif;
-$font-family-road-radio: 'Montserrat', sans-serif;
+$font-family-road-radio: 'RoadRadio', sans-serif;
 $footer-height: 52px;
 $footer-button-bg: #2A2A2E;
 $footer-button-border: #494950;
@@ -46,7 +63,7 @@ $footer-email-font-size: 24px;
 $footer-email-line-height: 33.6px;
 $footer-email-margin-bottom: 73px;
 // Переменные для шрифтов
-$font-family-road-radio: 'Montserrat', sans-serif;
+$font-family-road-radio: 'RoadRadio', sans-serif;
 $font-family-golos: 'Golos', sans-serif;
 // Переменные для размеров
 $max-width: 1280px;
@@ -103,13 +120,13 @@ $button-radius: 14px;
                 padding: 8px;
                 line-height: 18px;
                 white-space: nowrap;
+                font-family: $font-family-golos;
             }
         }
         .header__logo {
             display: flex;
             justify-content: center;
             flex-grow: 1;
-            margin-right: 30px;
         }
         .header__widgets {
             display: flex;
@@ -138,6 +155,7 @@ $button-radius: 14px;
             }
             .email {
                 color: #797986;
+                font-family: $font-family-golos;
             }
         }
         .header__button {
@@ -750,7 +768,7 @@ $button-radius: 14px;
         }
 
         .footer-right-email {
-            font-family: $font-family-akzidenz;
+            font-family: $font-family-golos;
             font-size: 19px;
             font-weight: 500;
             line-height: 20.9px;
