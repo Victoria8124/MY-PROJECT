@@ -1,0 +1,937 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+// Переменные для цветов
+$white: #ffffff;
+$black: #000000;
+$dark-gray: #333;
+$light-gray: #f5f5f5;
+$accent-color: #bf2738;
+$gray: #808080;
+$breadcrumb-active: #b0b0b0;
+// Переменные для цветов, шрифтов и отступов
+$background-color: #f5f5f5;
+$text-color: #262633;
+$secondary-text-color: #797986;
+$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+$border-radius: 10px;
+$padding: 33px 22px;
+$card-height: 310px;
+$gap: 30px;
+$margin-top: 81px;
+$margin-bottom: 100px;
+// Переменные для цветов, шрифтов и отступов
+$background-gradient: linear-gradient(to right, #222225 50%, #2A2A2E 50%);
+$footer-background: #222225;
+$footer-color: #fff;
+$primary-text-color: #797986;
+$footer-padding: 20px;
+$font-family-akzidenz: 'Roboto', sans-serif;
+$font-family-golos: 'Golos', sans-serif;
+$font-family-road-radio: 'Montserrat', sans-serif;
+$footer-height: 52px;
+$footer-button-bg: #2A2A2E;
+$footer-button-border: #494950;
+$footer-button-border-radius: 14px;
+$footer-button-padding: 8px 16px;
+$footer-button-font-size: 14px;
+$footer-phone-font-size: 30px;
+$footer-phone-font-weight: 500;
+$footer-phone-line-height: 39px;
+$footer-phone-margin-right: 80px;
+$footer-email-color: #F23147;
+$footer-email-font-size: 24px;
+$footer-email-line-height: 33.6px;
+$footer-email-margin-bottom: 73px;
+// Переменные для шрифтов
+$font-family-road-radio: 'Montserrat', sans-serif;
+$font-family-golos: 'Golos', sans-serif;
+// Переменные для размеров
+$max-width: 1280px;
+$header-height: 92px;
+$burger-width: 32px;
+$burger-height: 10px;
+$widget-gap: 23px;
+$contact-gap: 59px;
+$input-padding: 20px;
+$button-radius: 14px;
+// Общие стили
+
+// Общие стили
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.conteiner {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 20px;
+    .header {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: $white;
+        max-height: $header-height;
+        .header__burger {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: $burger-width;
+            height: $burger-height;
+            cursor: pointer;
+            margin-right: $contact-gap;
+            .burger-bar {
+                background-color: $dark-gray;
+                height: 2px;
+                width: 100%;
+            }
+            .bar {
+                width: 50%;
+            }
+        }
+        .header__nav {
+            display: flex;
+            gap: 46px;
+            max-width: 408px;
+            .nav-link {
+                text-decoration: none;
+                color: $dark-gray;
+                font-size: 15px;
+                padding: 8px;
+                line-height: 18px;
+                white-space: nowrap;
+            }
+        }
+        .header__logo {
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
+            margin-right: 30px;
+        }
+        .header__widgets {
+            display: flex;
+            gap: $widget-gap;
+            margin-right: 68px;
+            .widget {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+            }
+        }
+        .header__contact {
+            display: flex;
+            flex-direction: column;
+            margin-right: $contact-gap;
+            .phone {
+                font-family: $font-family-golos;
+                font-size: 15px;
+                font-weight: 500;
+                line-height: 18px;
+                color: $dark-gray;
+                max-width: 132px;
+                font-weight: bold;
+                white-space: nowrap;
+            }
+            .email {
+                color: #797986;
+            }
+        }
+        .header__button {
+            padding: 19px 28px;
+            background-color: $accent-color;
+            color: $white;
+            border: none;
+            cursor: pointer;
+            border-radius: $button-radius;
+            font-size: 14px;
+            line-height: 14px;
+            font-family: $font-family-road-radio;
+            font-weight: 400;
+        }
+    }
+}
+.contacts-block {
+    padding: 40px 0;
+    background-color: $light-gray;
+}
+.breadcrumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $font-family-golos;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.4px;
+    text-align: center;
+    .breadcrumb__item {
+        cursor: pointer;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    .breadcrumb__item--active {
+        color: $breadcrumb-active;
+    }
+}
+.separator {
+    position: relative;
+    width: 100vw;
+    height: 1px;
+    background-color: $black;
+    margin: 20px 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.contacts-title {
+    font-family: $font-family-road-radio;
+    font-size: 46px;
+    font-weight: 400;
+    line-height: 46px;
+    text-align: center;
+}
+.contacts-block-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 40px 20px;
+    background-color: $white;
+    flex-wrap: wrap;
+    .contacts-info {
+        flex: 1;
+        min-height: 492px;
+        max-width: 610px;
+        .contacts-info-phone {
+            font-family: $font-family-road-radio;
+            font-size: 36px;
+            line-height: 39.6px;
+            color: $dark-gray;
+            max-width: 296px;
+        }
+        .contacts-info-email {
+            font-family: $font-family-golos;
+            color: $accent-color;
+            font-weight: 400;
+            font-size: 25px;
+            line-height: 30px;
+            margin-bottom: 20px;
+        }
+        .contacts-info-company {
+            color: $dark-gray;
+            font-family: $font-family-golos;
+            font-weight: 400;
+            font-size: 17px;
+            line-height: 18.7px;
+            margin-bottom: 15px;
+        }
+        .contacts-info-data {
+            color: $gray;
+            font-family: $font-family-golos;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 19.5px;
+            p {
+                padding-bottom: 10px;
+            }
+        }
+    }
+    .contact-form {
+        flex: 1;
+        background-color: $white;
+        padding: 20px;
+        width: 100%;
+        max-width: 500px;
+        .form-title {
+            font-family: $font-family-road-radio;
+            margin-bottom: 20px;
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 39.6px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            label {
+                display: flex;
+                font-size: 14px;
+                margin-bottom: 8px;
+            }
+            input,
+            textarea {
+                font-family: $font-family-golos;
+                font-weight: 400;
+                width: 100%;
+                padding-top: 17px;
+                padding-left: $input-padding;
+                padding-bottom: 11px;
+                border: 1px solid #ddd;
+                border-radius: $button-radius;
+                font-size: 16px;
+                box-sizing: border-box;
+                line-height: 10px;
+                background-color: $light-gray;
+            }
+            textarea {
+                resize: none;
+            }
+        }
+        .form-group--split {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            .form-group__left,
+            .form-group__right {
+                flex: 1;
+            }
+            .form-group__left {
+                margin-right: 10px;
+            }
+        }
+        .form-group--checkbox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: nowrap;
+            margin-bottom: 20px;
+            label {
+                font-size: 12px;
+                color: $dark-gray;
+                flex-wrap: nowrap;
+                display: flex;
+                align-items: center;
+            }
+            input[type='checkbox'] {
+                margin-right: 10px;
+                appearance: none;
+                background-color: $light-gray;
+                width: 16px;
+                height: 16px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                cursor: pointer;
+                position: relative;
+            }
+
+            input[type='checkbox']:checked {
+                background-color: $accent-color;
+                border-color: $accent-color;
+            }
+            input[type='checkbox']:checked::after {
+                content: '✓';
+                color: $white;
+                font-size: 12px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-family: Arial, sans-serif;
+                font-weight: bold;
+            }
+        }
+        .submit-button {
+            font-family: $font-family-road-radio;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 14px;
+            text-align: center;
+            width: 190px;
+            padding: 19px 36px;
+            background-color: $accent-color;
+            color: $white;
+            border: none;
+            cursor: pointer;
+            border-radius: $button-radius;
+        }
+    }
+}
+// Контейнер для карточек
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $gap;
+    margin-top: $margin-top;
+    margin-bottom: $margin-bottom;
+    // Стили для каждой карточки
+    .card {
+        height: $card-height;
+        background-color: $background-color;
+        padding: $padding;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        position: relative;
+        // 4-я карточка растягивается на 2 колонки
+        &:last-child {
+            grid-column: span 2;
+        }
+        h4 {
+            margin-bottom: 15px;
+            font-family: $font-family-road-radio;
+            font-size: 26px;
+            font-weight: 400;
+            line-height: 28.6px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+        }
+        p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: $accent-color;
+            font-weight: bold;
+        }
+        .operating-mode {
+            position: absolute;
+            bottom: 40px;
+        }
+        .card-phone {
+            font-family: $font-family-road-radio;
+            font-size: 19px;
+            font-weight: 400;
+            line-height: 28.5px;
+            text-align: left;
+            color: $text-color;
+        }
+        .card-street {
+            font-family: $font-family-road-radio;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 19.6px;
+            text-align: left;
+            color: $secondary-text-color;
+        }
+    }
+}
+//footer
+// Обёртка для полного фона
+.footer-wrapper {
+    width: 100%;
+    background: $background-gradient;
+    color: $footer-color;
+}
+// Основной футер
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: $footer-padding;
+    align-items: stretch;
+    height: auto;
+}
+// Левые и правые блоки футера
+.footer-left,
+.footer-right {
+    width: 48%;
+    font-family: $font-family-akzidenz;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 14.3px;
+    text-align: left;
+    color: $primary-text-color;
+}
+.footer-section-one {
+    margin-bottom: 69px;
+    margin-top: 63px;
+    li {
+        list-style: none;
+    }
+    li a {
+        text-decoration: none;
+        color: $footer-color;
+        font-family: $font-family-golos;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 33.6px;
+        text-align: left;
+    }
+}
+.footer-section-two ul {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 488px;
+    padding-right: 156px;
+    margin-bottom: 66px;
+}
+.footer-section-two li {
+    font-family: $font-family-akzidenz;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28.8px;
+    text-align: left;
+   
+}
+.footer-section-two li a {
+    text-decoration: none;
+    color: $primary-text-color;
+}
+.footer-section-two li a:hover {
+    color: $footer-color;
+}
+// Правый блок футера
+.footer-right {
+    padding-top: 63px;
+        padding-left: 40px;
+}
+.footer-right-contacts {
+    display: flex;
+    .footer-right-phone {
+        font-family: $font-family-golos;
+        font-size: $footer-phone-font-size;
+        font-weight: $footer-phone-font-weight;
+        line-height: $footer-phone-line-height;
+        text-align: left;
+        margin-right: $footer-phone-margin-right;
+        color: $footer-color;
+        margin-bottom: 20px;
+    }
+    .footer-right-button {
+        width: 190px;
+        height: $footer-height;
+        border-radius: $footer-button-border-radius;
+        background-color: $footer-button-bg;
+        color: $footer-color;
+        border: 2px solid $footer-button-border;
+        padding: $footer-button-padding;
+        cursor: pointer;
+        font-size: $footer-button-font-size;
+        font-family: $font-family-golos;
+    }
+}
+.footer-right-address {
+    margin-bottom: 55px;
+    font-family: $font-family-akzidenz;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20.8px;
+    text-align: left;
+}
+.footer-right-email {
+    font-family: $font-family-golos;
+    font-size: $footer-email-font-size;
+    font-weight: 400;
+    line-height: $footer-email-line-height;
+    text-align: left;
+    color: $footer-email-color;
+    margin-bottom: $footer-email-margin-bottom;
+}
+.basement {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 33px;
+
+}
+.basement-left-wrapper,
+.basement-right-wrapper {
+    margin: 20px;
+    text-align: left;
+    width: 48%;
+    font-family: "Akzidenz-Grotesk Pro";
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 14.3px;
+    text-align: left;
+    font-family: $font-family-akzidenz;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #797986;
+}
+.basement-right-wrapper{
+    padding-left: 40px;
+    .highlight{
+        color: #fff;
+    }
+}
+.separator-color {
+    background-color: #F5F5F5;
+    height: 1px;
+}
+@media(max-width: 1919px) {
+
+    /* Контейнер карточек */
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* Изменяем на 2 колонки */
+        padding: 0px 29px;
+
+        .card {
+            &:last-child {
+                grid-column: span 2;
+                /* Растягиваем последнюю карточку на 2 колонки */
+            }
+        }
+    }
+
+    /* Контейнер */
+    .conteiner {
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 28px;
+            /* Сжимаем отступы для экономии места */
+
+            .header__burger {
+                width: $burger-width - 9px;
+                height: $burger-height - 2px;
+                margin-right: 19px;
+            }
+
+            .header__nav {
+                display: flex;
+                gap: $widget-gap - 3px;
+                /* Уменьшаем расстояние между ссылками */
+                margin-right: 20px;
+            }
+
+            .header__nav .nav-link:nth-child(3) {
+                display: none;
+                /* Убираем последнюю ссылку */
+            }
+
+            .header__button {
+                display: none;
+                /* Убираем кнопку */
+            }
+
+            .header__logo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            /* Скрываем старый логотип */
+            .header__logo img {
+                display: none;
+            }
+
+            /* Добавляем новый логотип */
+            .header__logo {
+                background-image: url('../imges/Лого.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                width: 90px;
+                /* Ширина нового логотипа */
+                height: 30px;
+                /* Высота нового логотипа */
+                margin-right: 60px;
+            }
+
+            .header__widgets {
+                display: flex;
+                gap: $widget-gap;
+                /* Уменьшаем расстояние между виджетами */
+                margin-right: 28px;
+            }
+
+            .header__contact {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: 37px;
+                /* Новая высота */
+                margin-right: 0;
+            }
+        }
+    }
+
+    /* Заголовок для контактов */
+    .contacts-title {
+        font-family: $font-family-road-radio;
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 32px;
+        text-align: center;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+    }
+}
+
+@media (max-width: 1919px) {
+    .contacts-block-form {
+        padding: 40px 29px;
+
+        .contacts-info-phone {
+            font-family: $font-family-road-radio;
+            font-size: 28px;
+            font-weight: 400;
+            line-height: 33.6px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+        }
+
+        .contacts-info-company {
+            font-family: $font-family-golos;
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 18.7px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+        }
+
+        .contacts-info {
+            max-width: 100%;
+            margin-bottom: 20px;
+            /* Отступ от нижнего края */
+        }
+
+        .contact-form {
+            max-width: 100%;
+            padding: 0;
+        }
+
+        .form-group--split {
+            flex-direction: column;
+            /* Располагаем элементы столбиком */
+            gap: 10px;
+            /* Отступы между элементами */
+        }
+
+        .form-group__left,
+        .form-group__right {
+            width: 100%;
+            /* Занимают всю ширину контейнера */
+        }
+    }
+}
+
+@media (max-width: 1919px) {
+    .footer-left {
+        .footer-section-one {
+            margin-top: 43px;
+        }
+  
+        .footer-section-two ul {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 12px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            max-width: 488px;
+            padding-right: 20px;
+            margin-bottom: 47px;
+        }
+    }
+
+      
+
+    .footer-right {
+        margin: 0;
+        padding-top: 43px;
+
+        .footer-right-contacts {
+            display: block;
+
+            .footer-right-phone {
+                font-size: $footer-phone-font-size - 7px;
+                line-height: 34.5px;
+                text-underline-position: from-font;
+                text-decoration-skip-ink: none;
+                margin-right: 0;
+            }
+
+            .footer-right-button {
+                margin-bottom: 15px;
+                height: 45px;
+            }
+        }
+
+        .footer-right-email {
+            font-family: $font-family-akzidenz;
+            font-size: 19px;
+            font-weight: 500;
+            line-height: 20.9px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            margin-bottom: 34px;
+        }
+    }
+
+    .basement {
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        font-family: $font-family-akzidenz;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 14.3px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        color: $primary-text-color;
+
+        .basement-right {
+            padding-right: 20px;
+
+            .highlight {
+                color: #F23147;
+            }
+        }
+
+        .basement-left {
+            padding-right: 10px;
+        }
+
+        .basement-right-wrapper {
+            padding: 0;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .conteiner {
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px $padding; // Используем общую переменную для отступов
+
+            .header__logo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-image: url('../imges/logo.png');
+                width: 67px;
+                height: 40px;
+                margin-right: 0;
+                margin-left: $padding; // Используем переменную для отступов
+            }
+
+            .header__widgets {
+                display: flex;
+                gap: $widget-gap; // Переменная для расстояния между виджетами
+                justify-content: flex-end;
+            }
+
+            .header__nav,
+            .header__contact,
+            .header__button {
+                display: none; // Прячем элементы
+            }
+        }
+    }
+
+    .contacts-title {
+        font-size: 22px;
+        line-height: 26.4px;
+    }
+
+    .contacts-block-form {
+        padding-left: 50px; // Можно вынести в переменную, если повторяется
+        display: block;
+
+        .contacts-info,
+        .contact-form {
+            padding: $padding; // Используем общую переменную для отступов
+        }
+
+        .contacts-info {
+            .contacts-info-phone {
+                font-size: $footer-phone-font-size; // Переменная для размера шрифта телефона
+            }
+        }
+
+        .contact-form {
+            .form-title {
+                font-size: 20px; // Если повторяется, можно создать переменную
+                line-height: 24px;
+                text-align: left;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        gap: $gap; 
+        margin-top: $margin-top;
+        margin-bottom: $margin-bottom;
+
+        .card {
+            width: 288px; 
+            height: auto; 
+            background-color: $white;
+            padding: $padding;
+            border-radius: $border-radius; 
+            box-shadow: $box-shadow; 
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            position: static; 
+        }
+
+        .card .operating-mode {
+            position: static; 
+        }
+    }
+}
+
+
+ @media (max-width: 768px) {
+     .conteiner {
+         padding: 0;
+         .footer {
+             flex-direction: column; // Блоки футера становятся вертикальными
+             padding: 0;
+         }
+         .footer-left,
+         .footer-right {
+             width: 100%; // Оба блока занимают всю ширину
+             padding: 40px 22px; // Отступы между блоками
+         }
+         .footer-left {
+             background-color: #222225; // Цвет фона для левого блока
+             .footer-section-one {
+                 margin-top: 0;
+             }
+         }
+         .footer-right {
+             background-color: #2A2A2E; // Цвет фона для правого блока
+             .footer-right-address {
+                 color: #fff;
+                 font-size: 16px;
+                 font-weight: 400;
+                 line-height: 20.8px;
+             }
+         }
+         .basement {
+             flex-direction: column; // Блоки basement будут располагаться вертикально
+             //  align-items: ; // Центрирование блоков
+             background-color: #2A2A2E; // Цвет фона для правого блока
+             gap: 0;
+             padding: 0;
+         }
+         .separator {
+             margin: 0;
+         }
+         .basement-left-wrapper {
+             margin: 40px 0 0 22px;
+             white-space: nowrap;
+         }
+         .basement-right-wrapper {
+             margin: 0 0 40px 22px;
+             white-space: nowrap;
+             .highlight {
+                 color: #fff;
+             }
+         }
+     }
+
+ }
