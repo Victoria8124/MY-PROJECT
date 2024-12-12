@@ -556,17 +556,14 @@ $button-radius: 14px;
     height: 1px;
 }
 @media(max-width: 1919px) {
-
     /* Контейнер карточек */
     .card-container {
         grid-template-columns: repeat(2, 1fr);
-        /* Изменяем на 2 колонки */
         padding: 0px 29px;
 
         .card {
             &:last-child {
                 grid-column: span 2;
-                /* Растягиваем последнюю карточку на 2 колонки */
             }
         }
     }
@@ -798,7 +795,7 @@ $button-radius: 14px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px $padding; // Используем общую переменную для отступов
+            padding: 10px $padding; 
 
             .header__logo {
                 display: flex;
@@ -808,19 +805,19 @@ $button-radius: 14px;
                 width: 67px;
                 height: 40px;
                 margin-right: 0;
-                margin-left: $padding; // Используем переменную для отступов
+                margin-left: $padding; 
             }
 
             .header__widgets {
                 display: flex;
-                gap: $widget-gap; // Переменная для расстояния между виджетами
+                gap: $widget-gap; 
                 justify-content: flex-end;
             }
 
             .header__nav,
             .header__contact,
             .header__button {
-                display: none; // Прячем элементы
+                display: none; 
             }
         }
     }
@@ -831,23 +828,23 @@ $button-radius: 14px;
     }
 
     .contacts-block-form {
-        padding-left: 50px; // Можно вынести в переменную, если повторяется
+        padding-left: 50px; 
         display: block;
 
         .contacts-info,
         .contact-form {
-            padding: $padding; // Используем общую переменную для отступов
+            padding: $padding; 
         }
 
         .contacts-info {
             .contacts-info-phone {
-                font-size: $footer-phone-font-size; // Переменная для размера шрифта телефона
+                font-size: $footer-phone-font-size; 
             }
         }
 
         .contact-form {
             .form-title {
-                font-size: 20px; // Если повторяется, можно создать переменную
+                font-size: 20px; 
                 line-height: 24px;
                 text-align: left;
             }
@@ -888,22 +885,22 @@ $button-radius: 14px;
      .conteiner {
          padding: 0;
          .footer {
-             flex-direction: column; // Блоки футера становятся вертикальными
+             flex-direction: column; 
              padding: 0;
          }
          .footer-left,
          .footer-right {
-             width: 100%; // Оба блока занимают всю ширину
-             padding: 40px 22px; // Отступы между блоками
+             width: 100%; 
+             padding: 40px 22px; 
          }
          .footer-left {
-             background-color: #222225; // Цвет фона для левого блока
+             background-color: #222225; 
              .footer-section-one {
                  margin-top: 0;
              }
          }
          .footer-right {
-             background-color: #2A2A2E; // Цвет фона для правого блока
+             background-color: #2A2A2E; 
              .footer-right-address {
                  color: #fff;
                  font-size: 16px;
@@ -912,9 +909,8 @@ $button-radius: 14px;
              }
          }
          .basement {
-             flex-direction: column; // Блоки basement будут располагаться вертикально
-             //  align-items: ; // Центрирование блоков
-             background-color: #2A2A2E; // Цвет фона для правого блока
+             flex-direction: column;
+             background-color: #2A2A2E; 
              gap: 0;
              padding: 0;
          }
@@ -933,5 +929,4 @@ $button-radius: 14px;
              }
          }
      }
-
  }
