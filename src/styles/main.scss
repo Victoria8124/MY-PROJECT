@@ -66,12 +66,12 @@ $footer-email-margin-bottom: 73px;
 $font-family-road-radio: 'RoadRadio', sans-serif;
 $font-family-golos: 'Golos', sans-serif;
 // Переменные для размеров
-$max-width: 1280px;
+$max-width: 1290px;
 $header-height: 92px;
 $burger-width: 32px;
-$burger-height: 10px;
+$burger-height: 11px;
 $widget-gap: 23px;
-$contact-gap: 59px;
+$contact-gap: 53px;
 $input-padding: 20px;
 $button-radius: 14px;
 // Общие стили
@@ -85,11 +85,11 @@ $button-radius: 14px;
 .conteiner {
     max-width: $max-width;
     margin: 0 auto;
-    padding: 0 20px;
+    // padding: 0 20px;
     .header {
         display: flex;
         align-items: center;
-        padding: 10px 20px;
+        // padding: 10px 0;
         background-color: $white;
         max-height: $header-height;
         .header__burger {
@@ -111,27 +111,30 @@ $button-radius: 14px;
         }
         .header__nav {
             display: flex;
-            gap: 46px;
+            gap: 36px;
             max-width: 408px;
             .nav-link {
                 text-decoration: none;
-                color: $dark-gray;
-                font-size: 15px;
+                color: $text-color;
+                // font-size: 15px;
+                font-size: calc(10px + 5 * (100vw/1290));
                 padding: 8px;
                 line-height: 18px;
                 white-space: nowrap;
                 font-family: $font-family-golos;
+                font-weight: 400;
             }
         }
         .header__logo {
             display: flex;
             justify-content: center;
             flex-grow: 1;
+            padding: 13px 0 15px 0;
         }
         .header__widgets {
             display: flex;
             gap: $widget-gap;
-            margin-right: 68px;
+            margin-right: 59px;
             .widget {
                 display: flex;
                 align-items: center;
@@ -145,17 +148,24 @@ $button-radius: 14px;
             margin-right: $contact-gap;
             .phone {
                 font-family: $font-family-golos;
-                font-size: 15px;
+                // font-size: 15px;
+                font-size: calc(10px + 5 * (100vw/1290));
                 font-weight: 500;
                 line-height: 18px;
                 color: $dark-gray;
                 max-width: 132px;
                 font-weight: bold;
                 white-space: nowrap;
+                margin-right: 9px;
+                margin-bottom: 6px;
             }
             .email {
-                color: #797986;
+                color: $primary-text-color;
                 font-family: $font-family-golos;
+                // font-size: 14px;
+                font-size: calc(10px + 4 * (100vw/1290));
+                line-height: 15.6px;
+                font-weight: 400;
             }
         }
         .header__button {
@@ -165,7 +175,8 @@ $button-radius: 14px;
             border: none;
             cursor: pointer;
             border-radius: $button-radius;
-            font-size: 14px;
+            // font-size: 14px;
+            font-size: calc(11px + 3 * (100vw/1290));
             line-height: 14px;
             font-family: $font-family-road-radio;
             font-weight: 400;
@@ -173,7 +184,7 @@ $button-radius: 14px;
     }
 }
 .contacts-block {
-    padding: 40px 0;
+    padding: 22px 0;
     background-color: $light-gray;
 }
 .breadcrumb {
@@ -187,8 +198,9 @@ $button-radius: 14px;
     text-align: center;
     .breadcrumb__item {
         cursor: pointer;
-        padding-right: 10px;
-        padding-left: 10px;
+        padding-right: 12px;
+        padding-left: 12px;
+        color: $primary-text-color;
     }
     .breadcrumb__item--active {
         color: $breadcrumb-active;
@@ -198,24 +210,25 @@ $button-radius: 14px;
     position: relative;
     width: 100vw;
     height: 1px;
-    background-color: $black;
-    margin: 20px 0;
+    background-color: #d8d6d6;
+    margin: 25px 0 22px 0;
     left: 50%;
     transform: translateX(-50%);
 }
 .contacts-title {
     font-family: $font-family-road-radio;
-    font-size: 46px;
+font-size: calc(22px + 24 * (100vw/1290));
     font-weight: 400;
     line-height: 46px;
     text-align: center;
+    margin-bottom: 8px;
 }
 .contacts-block-form {
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     align-items: flex-start;
     gap: 30px;
-    padding: 40px 20px;
+    padding: 62px 0 66px 0;
     background-color: $white;
     flex-wrap: wrap;
     .contacts-info {
@@ -224,10 +237,11 @@ $button-radius: 14px;
         max-width: 610px;
         .contacts-info-phone {
             font-family: $font-family-road-radio;
-            font-size: 36px;
+            font-size: calc(28px + 8 * (100vw/1290));
             line-height: 39.6px;
             color: $dark-gray;
             max-width: 296px;
+            white-space: nowrap;
         }
         .contacts-info-email {
             font-family: $font-family-golos;
@@ -242,7 +256,7 @@ $button-radius: 14px;
             font-family: $font-family-golos;
             font-weight: 400;
             font-size: 17px;
-            line-height: 18.7px;
+            line-height: 25px;
             margin-bottom: 15px;
         }
         .contacts-info-data {
@@ -252,20 +266,21 @@ $button-radius: 14px;
             font-weight: 400;
             line-height: 19.5px;
             p {
-                padding-bottom: 10px;
+                padding-bottom: 17px;
             }
         }
     }
     .contact-form {
         flex: 1;
         background-color: $white;
-        padding: 20px;
+       padding-left: 20px;
         width: 100%;
-        max-width: 500px;
+        // max-width: 500px;
         .form-title {
             font-family: $font-family-road-radio;
-            margin-bottom: 20px;
-            font-size: 36px;
+            margin-bottom: 14px;
+            white-space: nowrap;
+            font-size: calc(28px + 8 * (100vw/1290));
             font-weight: 400;
             line-height: 39.6px;
         }
@@ -275,6 +290,7 @@ $button-radius: 14px;
                 display: flex;
                 font-size: 14px;
                 margin-bottom: 8px;
+
             }
             input,
             textarea {
@@ -283,13 +299,14 @@ $button-radius: 14px;
                 width: 100%;
                 padding-top: 17px;
                 padding-left: $input-padding;
-                padding-bottom: 11px;
-                border: 1px solid #ddd;
+                padding-bottom: 15px;
+                border: none;
                 border-radius: $button-radius;
                 font-size: 16px;
                 box-sizing: border-box;
-                line-height: 10px;
+                line-height: 20px;
                 background-color: $light-gray;
+                color: #797986;
             }
             textarea {
                 resize: none;
@@ -303,22 +320,23 @@ $button-radius: 14px;
             .form-group__right {
                 flex: 1;
             }
-            .form-group__left {
-                margin-right: 10px;
-            }
         }
         .form-group--checkbox {
             display: flex;
             align-items: center;
             gap: 10px;
             flex-wrap: nowrap;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             label {
-                font-size: 12px;
+                font-size: 14px;
                 color: $dark-gray;
                 flex-wrap: nowrap;
-                display: flex;
-                align-items: center;
+        display: inline-block;
+            /* Равняем элементы в строку */
+            vertical-align: middle;
+            /* Выравниваем текст по центру чекбокса */
+                color: #808080;
+                
             }
             input[type='checkbox'] {
                 margin-right: 10px;
@@ -330,6 +348,8 @@ $button-radius: 14px;
                 border-radius: 4px;
                 cursor: pointer;
                 position: relative;
+                vertical-align: middle;
+                    /* Выравниваем чекбокс по тексту */
             }
 
             input[type='checkbox']:checked {
@@ -346,6 +366,10 @@ $button-radius: 14px;
                 transform: translate(-50%, -50%);
                 font-family: Arial, sans-serif;
                 font-weight: bold;
+            }
+
+            .checkbox-label-highlight{
+                color: #000000;
             }
         }
         .submit-button {
@@ -438,7 +462,7 @@ $button-radius: 14px;
 .footer {
     display: flex;
     justify-content: space-between;
-    padding: $footer-padding;
+    padding: 0 $footer-padding;
     align-items: stretch;
     height: auto;
 }
@@ -504,7 +528,8 @@ $button-radius: 14px;
     display: flex;
     .footer-right-phone {
         font-family: $font-family-golos;
-        font-size: $footer-phone-font-size;
+        font-size: calc(23px + 7 * (100vw/1290));
+        white-space: nowrap;
         font-weight: $footer-phone-font-weight;
         line-height: $footer-phone-line-height;
         text-align: left;
@@ -545,8 +570,6 @@ $button-radius: 14px;
 .basement {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 33px;
-
 }
 .basement-left-wrapper,
 .basement-right-wrapper {
@@ -561,7 +584,7 @@ $button-radius: 14px;
     font-family: $font-family-akzidenz;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
-    color: #797986;
+    color: $primary-text-color;
 }
 .basement-right-wrapper{
     padding-left: 40px;
@@ -570,10 +593,33 @@ $button-radius: 14px;
     }
 }
 .separator-color {
-    background-color: #F5F5F5;
+    background-color: #3d3d3d;;
     height: 1px;
+    margin: 0;
 }
-@media(max-width: 1919px) {
+
+@media(max-width: 1092px) {
+    .conteiner {
+        .header {
+            .header__burger {
+                margin-right: 7px;
+            }
+            .header__logo img {
+                width: 90px;
+            }
+            .header__button {
+                padding: 12px 15px;
+            }
+            .header__nav {
+                gap: 26px;
+            }
+            .header__contact {
+                margin-right: 33px;
+            }
+        }
+    }
+}
+@media(max-width: 991px) {
     /* Контейнер карточек */
     .card-container {
         grid-template-columns: repeat(2, 1fr);
@@ -671,14 +717,12 @@ $button-radius: 14px;
         text-decoration-skip-ink: none;
     }
 }
-
-@media (max-width: 1919px) {
+@media (max-width: 991px) {
     .contacts-block-form {
         padding: 40px 29px;
 
         .contacts-info-phone {
             font-family: $font-family-road-radio;
-            font-size: 28px;
             font-weight: 400;
             line-height: 33.6px;
             text-align: left;
@@ -721,8 +765,7 @@ $button-radius: 14px;
         }
     }
 }
-
-@media (max-width: 1919px) {
+@media (max-width: 991px) {
     .footer-left {
         .footer-section-one {
             margin-top: 43px;
@@ -806,8 +849,7 @@ $button-radius: 14px;
         }
     }
 }
-
-@media (max-width: 768px) {
+@media (max-width: 700px) {
     .conteiner {
         .header {
             display: flex;
@@ -830,6 +872,7 @@ $button-radius: 14px;
                 display: flex;
                 gap: $widget-gap; 
                 justify-content: flex-end;
+                margin-right: 0;
             }
 
             .header__nav,
@@ -869,8 +912,7 @@ $button-radius: 14px;
         }
     }
 }
-
-@media (max-width: 768px) {
+@media (max-width: 700px) {
     .card-container {
         display: flex;
         flex-direction: column; 
@@ -897,9 +939,7 @@ $button-radius: 14px;
         }
     }
 }
-
-
- @media (max-width: 768px) {
+ @media (max-width: 700px) {
      .conteiner {
          padding: 0;
          .footer {
